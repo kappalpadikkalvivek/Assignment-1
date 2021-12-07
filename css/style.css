@@ -73,11 +73,34 @@ h1,h2,h3{
     line-height: 1px;
     padding: 30px 0px 25px  0px;
     margin: 0;
-
     box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.13);
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+}
+#navbar ul{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    list-style-type:none ;
+}
+#navbar ul li a{
+    display: inline-block;
+    text-decoration: none;
 
 }
-
+.hamburger{
+    background-color:transparent ;
+    border:0;
+    display: none;
+    color:black;
+    cursor: pointer;
+    font-size:20px;
+}
+.hamburger:focus{
+    outline: none;
+}
 
 #logo{
     max-width: 300px;
@@ -107,12 +130,12 @@ h1,h2,h3{
     margin-right: 0px;
 }
 #navbar ul li a, #alia{
-    float:right;
+    
     color: #042d36bb!important;
     text-decoration: none;
     /* font-size: 15px; */
     line-height: 2px;
-    display: block;
+    display: inline-block;
     font-weight: 500;
     font-size: 15px;
     padding-top:10px;
@@ -128,14 +151,71 @@ h1,h2,h3{
     font-weight: bolder;
 }
 #navbar-right{
-    float: right;
+    display: block;
+    
 }
 @media screen and (max-width: 980px) {
-    #navbar {
-      padding: 20px 10px !important;
+    
+    .hamburger{
+        display: block;
+        float:right;
+        margin: auto;
+        padding-top:20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+
     }
+    #navbar-right {
+        display: none;
+        
+        width: 100%;
+        
+    }
+    #navbar-right.show{
+        display: block;
+        
+    }
+    #navbar ul{
+        background-color: #0bb7c2;
+        display:block ;
+        margin:0px;
+    }
+    #navbar ul li{
+        float:none;
+        display: block;
+        padding:0;
+        margin-bottom: 20px;
+        background-color: #0bb7c2;
+    }
+    
 }
 /* Menu Bar */
+.menu-icon{
+    background-image: url('/images/menu-burger.2df49bd0.svg');
+    display: none;
+}
+
+  @media screen and (min-width: 980px) {
+    #logo{
+        max-width: 300px;
+        max-height: 50px;
+        /* background-image: url(/images/LOGO_NYC_CTO.png); */
+        float:left;
+        padding: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    
+    
+    }
+    #navbar-right{
+        display: block;
+
+    }
+    .hamburger{
+        display: none;
+    }
+  }
 
 /*                              TEXT                                     */
 .container1{
@@ -240,10 +320,7 @@ h1,h2,h3{
 }
 @media screen and (max-width: 960px) {
     #float-image-3{
-        position: absolute;
-        bottom:-110px;
-        right:-1100px;
-        z-index: 0;
+        display: none;
     }
     #float-image-3a{
         width: 0;
