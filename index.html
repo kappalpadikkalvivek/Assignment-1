@@ -43,11 +43,70 @@
             // document.getElementById("logo").style.margin = "10px 0px";
           }
         }
+
+        // Script for auto rotate texts.
+        var TxtRotate = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 1;
+        this.period = parseInt(period, 8) || 100;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+        };
+
+        TxtRotate.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1 );
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 100 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 4; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 1000;
+        }
+
+        setTimeout(function() {
+            that.tick();
+        }, delta);
+        };
+
+        window.onload = function() {
+        var elements = document.getElementsByClassName('txt-rotate');
+        for (var i=0; i<(elements.length); i++) {
+            var toRotate = elements[i].getAttribute('data-rotate');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+            new TxtRotate(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #e1004b }";
+        document.body.appendChild(css);
+        };
+    
     </script>
     <script src="https://kit.fontawesome.com/7a57f62cdf.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
+    <header class="header">
         <nav id="navbar">
         <div id="container">
             <a  href="index.html" >
@@ -55,7 +114,8 @@
                 <img id="logo" src="/images/LOGO_NYC_CTO.png" alt="LOGO">
             </a>
             <div title="Navigation Bar" id="navbar-right">
-                <ul class="list" id="alia">
+                <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                <ul class="list menu" id="alia">
                     <li><a href="index.html">ABOUT</a></li>
                     <li><a href="index.html">COLLABORATION</a></li>
                     <li><a href="index.html">PROJECT</a></li>
@@ -68,10 +128,13 @@
     </nav>
     </header>
     
+    
     <div class="container1">
 
-    <h1 title="We use  technology, innovation, AI, design, research, policy, connectivity, and collaboration  to make New York City future-ready" class="stmt">We use<span style="color: red;"> technology</span> to make New York City future-ready.</h1>
-    </div>
+        <h1 title="We use  technology, innovation, AI, design, research, policy, connectivity, and collaboration  to make New York City future-ready" class="stmt">We use <span style="color: #e1004b;" class="txt-rotate"
+            data-period="2000"
+            data-rotate='[ "technology ", "inovation ", "AI ", "design ","research ", "policy ","connectivity ","collaboration " ]'></span><br> to make New York City future-ready.</h1>
+        </div>
     
     <div class="container2">
         <div  id="float-image-1">
@@ -102,7 +165,7 @@
                         <img src="./images/Spotlight.jpg" alt="Spotlight">
                     </div>
                     <!-- <div class="container33as2"> -->
-                        <div class="cls"><br><br>
+                        <div class="cls" id="clr">
                         <span id="spot">SPOTLIGHT</span><br>
 
                         <br><span id="nyc">New York City to Close Digital Divide for 1.6 Million Residents, Advance Racial Equality.</span>
@@ -116,33 +179,49 @@
             <div id="focus">
                 <h1>Our Focus Areas</h1>
                 <div class="focus1">
-                    <a class="left" href="">
-                    <h3 class="t1">UNIVERSAL BROADBRAND</h3>
-                    <p class="t2">Ensuring high-quality, affordable, and safe internet service for all New Yorkers. <span class="arrow"></span> </p>
-                    </a>
-                    
+                    <div class="hoveref">
+                        
+                            <a class="left" href="">
+                                <div class="line"></div>
+                            <h3 class="t1">UNIVERSAL BROADBRAND</h3>
+                            <p class="t2">Ensuring high-quality, affordable, and safe internet service for all New Yorkers. <span class="arrow"></span> </p>
+                            </a>
+                         
+                    </div>
                     <img class="right" src="./images/Img1.png" alt="cone">
                 </div>
                 <div class="focus1">
+                    <div class="hoveref">
+                        
                     <a class="right1" href="">
-                    <h3 class="t1">DIGITAL SERVICES</h3>
-                    <p class="t2">Delivering government services online to make government work better for everyone.<span class="arrow"></span></p>
+                        <div class="line"></div>
+                        <h3 class="t1">DIGITAL SERVICES</h3>
+                        <p class="t2">Delivering government services online to make government work better for everyone.<span class="arrow"></span></p>
                     </a>
+                    </div>
                     <img class="left1" src="./images/img 2.png" alt="rectangle">
 
                 </div>
                 <div class="focus1">
+                    <div class="hoveref">
+                        
                     <a class="left" href="">
-                    <h3 class="t1">INCLUSIVE INNOVATION</h3>
-                    <p class="t2">Making Ney York City the place where new ideas are applied to improve lives.<span class="arrow"></span></p>
+                        <div class="line"></div>
+                        <h3 class="t1">INCLUSIVE INNOVATION</h3>
+                        <p class="t2">Making Ney York City the place where new ideas are applied to improve lives.<span class="arrow"></span></p>
                     </a>
+                    </div>
                     <img class="right" src="./images/img3.png" alt="circle">
                 </div>
                 <div class="focus1">
-                    <a class="right1" href="">
-                    <h3 class="t1">TECH & Society</h3>
-                    <p class="t2">Advancing laws, rules, and plans that promote New Yorkers' digital rights.<span class="arrow"></span></p>
+                    <div class="hoveref">
+                        
+                    <a class="right1" href="" >
+                        <div class="line"></div>
+                        <h3 class="t1">TECH & Society</h3>
+                        <p class="t2">Advancing laws, rules, and plans that promote New Yorkers' digital rights.<span class="arrow"></span></p>
                     </a>
+                    </div>
                     <img class="left1" src="./images/img4.png" alt="paper">
                 </div>
             </div>
