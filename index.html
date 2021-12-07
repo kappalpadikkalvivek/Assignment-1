@@ -113,9 +113,21 @@
 
                 <img id="logo" src="/images/LOGO_NYC_CTO.png" alt="LOGO">
             </a>
-            <div title="Navigation Bar" id="navbar-right">
-                <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-                <ul class="list menu" id="alia">
+            <button class="hamburger" id="hamburger">
+            
+                
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div title="Navigation Bar" id="navbar-right">
+                    <script>//Script for menubar
+                        const hamburger=document.getElementById('hamburger');
+                        const navUL=document.getElementById('navbar-right');
+
+                        hamburger.addEventListener('click', () => {
+                            navUL.classList.toggle('show');
+                        })
+                        </script>
+                <ul  class="navmenu" id="alia">
                     <li><a href="index.html">ABOUT</a></li>
                     <li><a href="index.html">COLLABORATION</a></li>
                     <li><a href="index.html">PROJECT</a></li>
