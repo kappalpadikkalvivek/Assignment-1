@@ -13,25 +13,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;400;700&display=swap" rel="stylesheet">
-    <title>Mayors Office of the Chief Technology Officer | Hame Page</title>
+    <title>Mayors Office of the Chief Technology Officer | Home Page</title>
     <script>
         // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
         window.onscroll = function() {scrollFunction()};
         function scrollFunction() {
-          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80  ) {
             document.getElementById("container").style.margin = "auto";
             document.getElementById("container").style.padding = "0";
             document.getElementById("navbar").style.padding  ="0";
+            
             document.getElementById("alia").style.padding ="0px ";
-
-            document.getElementById("logo").src="/images/LOGO_WHITE_AFTER.png"
+            document.getElementById("hamburger").style.margin ="5px 20px 0px 0px";
+          
+            document.getElementById("logo").src="/images/LOGO_WHITE_AFTER.png";
             document.getElementById("logo").style.width = "140px ";
+            
             document.getElementById("logo").style.height = "25px ";
-          } else {
 
-            document.getElementById("container").style.padding = "0";
+          } else {
+            document.getElementById("hamburger").style.margin ="30px 20px 0px 0px";
+            document.getElementById("container").style.padding = "30px 0px 25px  0px";
             document.getElementById("navbar").style.margin  =" 0";
-            document.getElementById("navbar").style.padding  ="30px 0px 25px  0px";
+            
             document.getElementById("alia").style.padding ="10px 0px 20px  0px";
             document.getElementById("logo").style.width = "300px";
             document.getElementById("logo").style.height = "50px ";
@@ -95,7 +99,8 @@
         css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #e1004b }";
         document.body.appendChild(css);
         };
-    
+   
+
     </script>
     <script src="https://kit.fontawesome.com/7a57f62cdf.js" crossorigin="anonymous"></script>
 </head>
@@ -110,7 +115,6 @@
             <button class="hamburger" id="hamburger">
             
                 
-                    <i class="fas fa-bars"></i>
                 </button>
                 <div title="Navigation Bar" id="navbar-right">
                     <script>
@@ -121,8 +125,20 @@
                         hamburger.addEventListener('click', () => {
                             navUL.classList.toggle('show');
                         })
+                        const close=document.getElementById('close-burger');
+                        const navUL1=document.getElementById('navbar-right');
+
+                        close.addEventListener('click', () => {
+                            navUL1.classList.toggle('del');
+                        })
+                        
+
+
                     </script>
                 <ul  class="navmenu" id="alia">
+                    <li><a href="index.html"><img id="close-burger" class="closeburger" src="/images/close-menu.c5f9b38a.svg" alt=""></a></li>
+                    <script>
+                    </script>
                     <li><a href="index.html">ABOUT</a></li>
                     <li><a href="index.html">COLLABORATION</a></li>
                     <li><a href="index.html">PROJECT</a></li>
