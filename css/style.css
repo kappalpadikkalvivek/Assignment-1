@@ -135,7 +135,7 @@ h1,h2,h3{
     text-decoration: none;
     /* font-size: 15px; */
     line-height: 2px;
-    display: inline-block;
+        
     font-weight: 500;
     font-size: 15px;
     padding-top:10px;
@@ -154,15 +154,25 @@ h1,h2,h3{
     display: block;
     
 }
+#close-burger{
+    display: none;
+}
 @media screen and (max-width: 980px) {
     
     .hamburger{
         display: block;
+        transition: transform 2.5s ease-in-out !important;
         float:right;
         margin: auto;
-        padding-top:20px;
-    padding-bottom: 0px;
-    padding-left: 20px;
+        margin-top:15px;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+        margin-right: 20px;
+        background-image: url(/images/menu-burger.2df49bd0.svg);
+        height: 35px;
+        width: 35px;
+
 
     }
     #navbar-right {
@@ -172,13 +182,27 @@ h1,h2,h3{
         
     }
     #navbar-right.show{
-        display: block;
-        
+        display: block; 
+    }
+    #navbar-right.del{
+        display: none; 
     }
     #navbar ul{
         background-color: #0bb7c2;
-        display:block ;
+        
         margin:0px;
+        position:fixed;
+        top: 0%;
+        padding-right: 10px;
+        height: 48.5vh;
+        background-color: #0bb7c2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex;
+        width: 100%;
+        transition: transform 2.5s ease-in-out !important;
+        transform: translateY(-10%);
     }
     #navbar ul li{
         float:none;
@@ -186,6 +210,25 @@ h1,h2,h3{
         padding:0;
         margin-bottom: 20px;
         background-color: #0bb7c2;
+    }
+    #navbar ul li a{
+        color: #042d36!important;
+        background-color: transparent;
+    }
+    #navbar ul li a:hover{
+        cursor: pointer;
+    }
+    #close-burger {
+        display: flex;
+        cursor: pointer;
+        vertical-align: middle;
+        padding-right: 8px;
+    }
+    .nav-open-active {
+        transform: translateY(0%);
+    }
+    .nav-close-active{
+        transform: translateY(-9%);
     }
     
 }
