@@ -19,27 +19,25 @@
         window.onscroll = function() {scrollFunction()};
         function scrollFunction() {
           if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80  ) {
-            document.getElementById("container").style.margin = "auto";
-            document.getElementById("container").style.padding = "0";
-            document.getElementById("navbar").style.padding  ="0";
+            document.getElementById("logo").style.width = "125.28px ";
+            document.getElementById("logo").style.backgroundImage="url(/images/LOGO_WHITE_AFTER.png)";
+            document.getElementById("logo").style.height = "20px ";
+            document.getElementById("logo").style.marginTop="15px";
+            document.getElementById("navbar").style.height="54px";
+            document.getElementById("navmenu").style.margin="0px";
+            document.getElementById("navmenu").style.marginTop="16.5px";
+
             
-            document.getElementById("alia").style.padding ="0px ";
-            document.getElementById("hamburger").style.margin ="5px 20px 0px 0px";
-          
-            document.getElementById("logo").src="/images/LOGO_WHITE_AFTER.png";
-            document.getElementById("logo").style.width = "140px ";
-            
-            document.getElementById("logo").style.height = "25px ";
 
           } else {
-            document.getElementById("hamburger").style.margin ="30px 20px 0px 0px";
-            document.getElementById("container").style.padding = "30px 0px 25px  0px";
-            document.getElementById("navbar").style.margin  =" 0";
-            
-            document.getElementById("alia").style.padding ="10px 0px 20px  0px";
-            document.getElementById("logo").style.width = "300px";
+            document.getElementById("logo").style.width = "313.22px";
             document.getElementById("logo").style.height = "50px ";
-            document.getElementById("logo").src="/images/LOGO_NYC_CTO.png"
+            document.getElementById("logo").style.marginTop="24px";
+            document.getElementById("logo").style.backgroundImage="url(/images/LOGO_NYC_CTO.png)";
+            document.getElementById("navbar").style.height="99px";
+            document.getElementById("navmenu").style.margin="0px";
+            document.getElementById("navmenu").style.marginTop="39px";
+            
           }
         }
 
@@ -105,12 +103,12 @@
     <script src="https://kit.fontawesome.com/7a57f62cdf.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="header">
-        <nav id="navbar">
+   
+    <nav id="navbar">
         <div id="container">
             <a  href="index.html" >
-
-                <img id="logo" src="/images/LOGO_NYC_CTO.png" alt="LOGO">
+                <button id="logo"></button>
+                
             </a>
             <button class="hamburger" id="hamburger">
             
@@ -132,16 +130,14 @@
                             navUL1.classList.toggle('del');
                         })
                         
-
-
                     </script>
-                <ul  class="navmenu" id="alia">
+                <ul  class="navmenu" id="navmenu">
                     <li><a href="index.html"><img id="close-burger" class="closeburger" src="/images/close-menu.c5f9b38a.svg" alt=""></a></li>
                     <script>
                     </script>
                     <li><a href="index.html">ABOUT</a></li>
                     <li><a href="index.html">COLLABORATION</a></li>
-                    <li><a href="index.html">PROJECT</a></li>
+                    <li><a href="index.html">PROJECTS</a></li>
                     <li><a href="index.html">NEWS</a></li>
                     <li><a href="index.html">CONTACT</a></li>
                     <li><a href="index.html">JOBS</a></li>
@@ -149,165 +145,215 @@
             </div>
         </div>
     </nav>
-    </header>
     
-    
-    <div class="container1">
-
-        <h1 title="We use  technology, innovation, AI, design, research, policy, connectivity, and collaboration  to make New York City future-ready" class="stmt">We use <span style="color: #e1004b;" class="txt-rotate"
-            data-period="2000"
-            data-rotate='[ "technology ", "inovation ", "AI ", "design ","research ", "policy ","connectivity ","collaboration " ]'></span><br> to make New York City future-ready.</h1>
+     <div class="container1">
+        <div class="ordersup">
+            <div class="order">
+                <h1 title="We use  technology, innovation, AI, design, research, policy, connectivity, and collaboration  to make New York City future-ready" class="stmt">We use <span style="color: #e1004b;" class="txt-rotate"
+                    data-period="2000"
+                    data-rotate='[ "technology ", "inovation ", "AI ", "design ","research ", "policy ","connectivity ","collaboration " ]'></span><br> to make New York City future-ready
+                </h1>
+            </div>
         </div>
+    </div>
+    
+    
     
     <div class="container2">
         <div  id="float-image-1">
-            <img src="/images/Image 1 underlap.png" alt="Underlap" >
+            <!-- <img src="/images/Image 1 underlap.png" alt="Underlap" > -->
         </div>
+        
         <div title="A large crowd of people using their smartphones to take photos and videos." id="float-image-1a">
+            
         </div>
         <div id="float-image-2">
-            <img src="/images/Image 2.png" alt="Overlap">
+            <!-- <img src="/images/Image 2.png" alt="Overlap"> -->
         </div>
         <div title="A long-exposure photo of people crossing a city street." id="float-image-2a">
         </div>
         <div id="float-image-3">
-            <img src="/images/Image 3.png" alt="Idependent">
+            <!-- <img src="/images/Image 3.png" alt="Idependent"> -->
         </div>
         <div title="A construction site at dusk, with skyscrapers lit up in the background." id="float-image-3a">
         </div>
     </div>
-    <div class="container3">
-        <div id="alpha" >
-            <div class="container33"  >
-                <div class="contsuper">
-                    <div class="container331">
-                        <img src="./images/Spotlight.jpg" alt="Spotlight">
-                    </div>
+
+    <div class="conn">
+        <div class="container3">
+            <div id="alpha" >
+
+
+                <div class="container33"  >
+                    <div class="contsuper">
+                        <button class="container331"> 
+                        </button>
                         <div class="cls" id="clr">
-                        <span id="spot">SPOTLIGHT</span><br>
-
-                        <br><span id="nyc">New York City to Close Digital Divide for 1.6 Million Residents, Advance Racial Equality.</span>
-
-                       <br> <br><span id="learn">Learn more</span>
+                            <span id="spot">SPOTLIGHT</span>     
+                            <p id="nyc">New York City to Close Digital Divide for 1.6 Million Residents, Advance Racial Equity</p>
+                        <div class="learncov">
+                             <span id="learn" class="learn">Learn more</span>
                         </div>
+                        
+                    </div>
+                    
                 </div>
+            
+    
+                
+                                   
+            </div> 
+            
+        </div>
+        
+    </div>
+    
+    <div id="focus">
+        
+        <h1>Our Focus Areas</h1>
+        <div class="focus1">
+            <div class="hoveref">
+                <a class="left" href="">
+                    <div class="line"></div><br>
+                    <h3 class="t1">UNIVERSAL BROADBAND</h3>
+                    <p class="t2">Ensuring high-quality, affordable, and safe internet service for all New Yorkers.<span class="arrow"></span> </p>
+                </a>
+                <div class="right">
+                    <img  src="./images/Img1.png" alt="cone">
+                </div>                    
             </div>
-            <div id="focus">
-                <h1>Our Focus Areas</h1>
-                <div class="focus1">
-                    <div class="hoveref">
-                            <a class="left" href="">
-                            <div class="line"></div>
-                            <h3 class="t1">UNIVERSAL BROADBRAND</h3>
-                            <p class="t2">Ensuring high-quality, affordable, and safe internet service for all New Yorkers. <span class="arrow"></span> </p>
-                            </a>
-                    </div>
-                    <img class="right" src="./images/Img1.png" alt="cone">
+        </div>
+         <div class="focus1"><br><br><br>
+            <div class="hoveref"> 
+                <a class="right1" href="">
+                    <div class="line"></div><br>
+                    <h3 class="t1">DIGITAL SERVICES</h3>
+                    <p class="t2">Delivering government services online to make government work better for everyone.<span class="arrow"></span></p>
+                </a>
+                <div class="left1">
+                    <img  src="./images/img 2.png" alt="rectangle">
                 </div>
-                <div class="focus1">
-                    <div class="hoveref"> 
-                    <a class="right1" href="">
-                        <div class="line"></div>
-                        <h3 class="t1">DIGITAL SERVICES</h3>
-                        <p class="t2">Delivering government services online to make government work better for everyone.<span class="arrow"></span></p>
-                    </a>
-                    </div>
-                    <img class="left1" src="./images/img 2.png" alt="rectangle">
-                </div>
-                <div class="focus1">
-                    <div class="hoveref">    
-                    <a class="left" href="">
-                        <div class="line"></div>
-                        <h3 class="t1">INCLUSIVE INNOVATION</h3>
-                        <p class="t2">Making Ney York City the place where new ideas are applied to improve lives.<span class="arrow"></span></p>
-                    </a>
-                    </div>
+            </div>    
+        </div>
+
+
+
+
+        
+        <div class="focus1">
+            <div class="hoveref">   
+                <div class="line"></div>
+                <a class="left" href="">
+                    <div class="line"></div><br>
+                    <h3 class="t1">INCLUSIVE INNOVATION</h3>
+                    
+                    <p class="t2">Making New York City the place where new ideas are applied to improve lives.<span class="arrow"></span></p>
+                </a>
+                <div class="right">
                     <img class="right" src="./images/img3.png" alt="circle">
-                </div>
-                <div class="focus1">
-                    <div class="hoveref">   
-                    <a class="right1" href="" >
-                        <div class="line"></div>
-                        <h3 class="t1">TECH & Society</h3>
-                        <p class="t2">Advancing laws, rules, and plans that promote New Yorkers' digital rights.<span class="arrow"></span></p>
-                    </a>
-                    </div>
-                    <img class="left1" src="./images/img4.png" alt="paper">
                 </div>
             </div>
         </div>
-        <div class="fuready" > </div>
-            <h1 class="tet">We make <br>New York City<br>future-ready</h1>
-            <div id="footer-up" >
-                <div >
-                    <div class="awe">
-                        <table id="beta">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <em>Attrbution</em>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            First photo, top section
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        Demetrius Freeman, New York City Mayoral Photography Office
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            Second photo, top section
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        New York City Mayor's Office of the CTO
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            Third photo, top section
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        Demetrius Freeman, New York City Mayoral Photography Office                                </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            Spotlight image
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        Edwin J. Torres, New York City Mayoral Photo Office
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            Photo, footer
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        Ed Reed, New York City Mayoral Photography Office
-                                    </td>
-                                </tr>
+        <div class="focus1">
+            <div class="hoveref">   
+                <a class="right1" href="" >
+                    <div class="line"></div><br>
+                    <h3 class="t1">TECH & Society</h3>
+                    <p class="t2">Advancing laws, rules, and plans that promote the public good and protect New Yorkers' digital rights.<span class="arrow"></span></p>
+                </a>
+                <div class="left1">
+                    <img class="" src="./images/img4.png" alt="paper">
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
-                            </tbody>
-                        </table>
-                    </div>
-                    <footer>
-                        <div class="container4">
-                            <div class="footer-left">
-                                <img src="./images/White Footer Logo.png" alt="Logo" style="width:300px">
-                                <div class="tmr">© 2021 The City of New York</div>
+    
+    </div>
+    <!--  -->
+    
+    
+
+    <div class="conn1">
+        <div class="fuready" > </div>
+         <h1 class="tet">We make <br>New York City<br>future-ready</h1>
+    
+        <div id="footer-up" >
+                <div class="awe">
+                    <table id="beta">
+                        <thead id="thead"> 
+                            <tr id="tr">
+                                <th id="th">
+                                    <em id="em" style="line-height: 2.5!important;">Attribution</em>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr id="tr">
+                                <td id="td">
+                                    <strong id="strong">
+                                        First photo, top section
+                                    </strong>
+                                </td>
+                                <td id="td">
+                                    Demetrius Freeman, New York City Mayoral Photography Office
+                                </td>
+                            </tr>
+                            <tr id="tr">
+                                <td id="td">
+                                    <strong id="strong">
+                                        Second photo, top section
+                                    </strong>
+                                </td>
+                                <td id="td">
+                                    New York City Mayor's Office of the CTO
+                                </td>
+                            </tr>
+                            <tr id="tr">
+                                <td id="td">
+                                    <strong id="strong">
+                                        Third photo, top section
+                                    </strong>
+                                </td>
+                                <td id="td">
+                                    Demetrius Freeman, New York City Mayoral Photography Office  
+                                </td>
+                            </tr>
+                            <tr id="tr">
+                                <td id="td">
+                                    <strong id="strong">
+                                        Spotlight image
+                                    </strong>
+                                </td>
+                                <td id="td">
+                                    Edwin J. Torres, New York City Mayoral Photo Office
+                                </td>
+                            </tr>
+                            <tr id="tr">
+                                <td id="td">
+                                    <strong id="strong">
+                                        Photo, footer
+                                    </strong>
+                                </td>
+                                <td id="td">
+                                    Ed Reed, New York City Mayoral Photography Office
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+       
+    
+        <div id="conn1">
+            <div id="footer-up">
+                <footer>
+                    
+                    <div class="container4">
+                        <div class="footer-left">
+                            <img src="./images/White Footer Logo.png" alt="Logo" style="width:300px">
+                            <div class="tmr">© 2021 The City of New York</div>
                                 <ul class="list2">
                                     <li><a class="list-text" href="#">CTO Accessibility Statement</a></li>
                                     <li><a class="list-text" href="#">NYC Privacy Policy</a></li>
@@ -343,10 +389,12 @@
                                 </div>
                             </div>
                         </div>
-                    </footer>
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
-   </body>
+</footer>
+</body>
 </html>
 
